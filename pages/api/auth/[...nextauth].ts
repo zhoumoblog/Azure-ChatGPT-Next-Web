@@ -16,14 +16,14 @@ if (process.env.AZURE_AD_CLIENT_ID && process.env.AZURE_AD_CLIENT_SECRET && proc
 
 if (process.env.BASIC_AUTH_USERNAME && process.env.BASIC_AUTH_PASSWOED) {
   authOptions.providers.push(CredentialsProvider({
-    name: "anonymous",
+    name: "zhoumo",
     credentials: {
       username: { label: "Username", type: "text" },
       password: { label: "Password", type: "password" }
     },
     async authorize(credentials, req) {
       if (credentials?.username === process.env.BASIC_AUTH_USERNAME && credentials?.password === process.env.BASIC_AUTH_PASSWOED) {
-        return { id: "1", name: "Basic Auth", email: "anonymous@lizhe.org" };
+        return { id: "1", name: "zhou mo", email: "anonymous@momo.fit" };
       }
       
       return null;
